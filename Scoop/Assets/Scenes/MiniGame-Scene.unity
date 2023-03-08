@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 815256889}
   - component: {fileID: 815256890}
   - component: {fileID: 815256891}
+  - component: {fileID: 815256892}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -670,6 +671,19 @@ MonoBehaviour:
   GameOver: 0
   title: {fileID: 1167011199}
   scoreboard: {fileID: 707129144}
+--- !u!114 &815256892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815256888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44895c77cd8dcf4ebf0a0f978902f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 707129144}
 --- !u!1 &833399376
 GameObject:
   m_ObjectHideFlags: 0
