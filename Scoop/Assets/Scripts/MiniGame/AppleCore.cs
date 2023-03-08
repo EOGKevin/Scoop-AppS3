@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Apple : MonoBehaviour
+public class AppleCore : MonoBehaviour
 {
     Main main;
     Transform tr;
@@ -24,9 +24,9 @@ public class Apple : MonoBehaviour
     {
         if (collision.gameObject.name == "basket")
         {
-            
-            main.ScoreAdd();
+            //Destory(this.gameObject);
+            //Destory(collision.gameObject);
+            main.GameOver = true;
         }
     }
-
 }

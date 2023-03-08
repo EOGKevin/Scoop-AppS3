@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Transform tr;
+
     void Start()
     {
-        
+        tr = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Input.GetKey("right") == true)
+        {
+            if (tr.position.x < 4f) tr.position += new Vector3(0.2f, 0f, 0f);
+        }
+
+        if (Input.GetKey("left") == true)
+        {
+            if (tr.position.x > -4f) tr.position += new Vector3(-0.2f, 0f, 0f);
+        }
     }
+
 }

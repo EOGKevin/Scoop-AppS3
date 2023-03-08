@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Apple : MonoBehaviour
+public class Grape : MonoBehaviour
 {
     Main main;
     Transform tr;
@@ -28,5 +28,4 @@ public class Apple : MonoBehaviour
             main.ScoreAdd();
         }
     }
-
 }
