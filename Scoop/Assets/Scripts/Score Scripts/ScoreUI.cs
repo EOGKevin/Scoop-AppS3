@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ScoreUI : MonoBehaviour
+public class ScoreUi : MonoBehaviour
 {
-    public RowUi rowUi;
-    public ScoreManager scoreManager;
+    #region V&P
+    [SerializeField] RowUi rowUi;
+    #endregion
 
-    void Start()
+    #region Initialization Methods
+    async void Start()
     {
-        scoreManager.AddScore(new Score("eran", 6));
-        scoreManager.AddScore(new Score("el", 66));
-
-        var scores = scoreManager.GetHighScores().ToArray();
+        // Loader scorere fra databasen
+        Score[] scores = await LoadScoreboard.Instance.QueryScoresAsync();
         for(int i = 0; i < scores.Length; i++)
         {
+            // Repræsentere en række for hver score
             var row = Instantiate(rowUi, transform).GetComponent<RowUi>();
             row.rank.text = (i+1).ToString();
-            row.uname.text = scores[i].uname;
+            row.name.text = scores[i].name;
             row.score.text = scores[i].score.ToString();
         }
     }
+    #endregion
 }

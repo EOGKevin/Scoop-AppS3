@@ -40,7 +40,7 @@ public class Main : MonoBehaviour
 
     public void ToScoreboard()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("ScoreBoard-Scene");
     }
 
     public void BackToMenu()

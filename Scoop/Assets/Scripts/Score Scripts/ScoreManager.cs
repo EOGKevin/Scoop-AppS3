@@ -1,25 +1,32 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics.Contracts;
+
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private ScoreData sd;
+    private int score = 0;
+    public static ScoreManager Instance;
 
-    void Awake()
+    public void Awake()
     {
-        sd = new ScoreData();
+        if (Instance == null && Instance != this)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public IEnumerable<Score> GetHighScores()
+    public void AddScore(int newScore)
     {
-        return sd.Scores.OrderByDescending(x => x.score);
+        score += newScore;
+        Score.Instance.ScoreText.text = score.ToString();
     }
 
-    public void AddScore(Score score)
-    {
-        sd.Scores.Add(score);
-    }
+    public int GetScore() { return score; }
+
 }

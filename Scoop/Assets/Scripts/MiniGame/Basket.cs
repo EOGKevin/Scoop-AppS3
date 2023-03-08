@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    Transform tr;
+    public Transform tr;
 
     void Start()
     {
