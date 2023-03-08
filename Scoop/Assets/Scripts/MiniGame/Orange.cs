@@ -10,7 +10,7 @@ public class Orange : MonoBehaviour
     void Start()
     {
         tr = GetComponent<Transform>();
-        main = GameObject.Find("scripts").GetComponent<Main>();
+        main = GameObject.Find("Scripts").GetComponent<Main>();
     }
 
     void FixedUpdate()

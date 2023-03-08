@@ -35,7 +35,17 @@ public class Main : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MiniGame-Scene");
+    }
+
+    public void ToScoreboard()
+    {
+        SceneManager.LoadScene("");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Main-Scene");
     }
 
 }
