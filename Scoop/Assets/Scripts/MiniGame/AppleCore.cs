@@ -24,8 +24,8 @@ public class AppleCore : MonoBehaviour
     {
         if (collision.gameObject.name == "basket")
         {
-            //Destory(this.gameObject);
-            //Destory(collision.gameObject);
+            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
             main.GameOver = true;
         }
     }

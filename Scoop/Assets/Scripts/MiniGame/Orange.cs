@@ -24,7 +24,7 @@ public class Orange : MonoBehaviour
     {
         if (collision.gameObject.name == "basket")
         {
-            
+            Destroy(this.gameObject);
             main.ScoreAdd();
         }
     }
