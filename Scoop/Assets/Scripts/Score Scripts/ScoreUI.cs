@@ -5,22 +5,21 @@ using UnityEngine;
 
 public class ScoreUI : MonoBehaviour
 {
-    #region VP
-    public RowUI rowUi;
-    #endregion
+    public RowUi rowUi;
+    public ScoreManager scoreManager;
 
-    #region IM
-    async void Start()
+    void Start()
     {
-        //Læser scoreren fra Databasen
-        Score[] scores = await LoadScoreBoard.Instance.QueryScoresAsync();
-        for (int i = 0; i < scores.Length; i++)
+        scoreManager.AddScore(new Score("eran", 6));
+        scoreManager.AddScore(new Score("el", 66));
+
+        var scores = scoreManager.GetHighScores().ToArray();
+        for(int i = 0; i < scores.Length; i++)
         {
-            var row Instantiate(rowUi, transform).GetComponent<RowUI>();
+            var row = Instantiate(rowUi, transform).GetComponent<RowUi>();
             row.rank.text = (i+1).ToString();
-            row.name.text = scores[i].name;
-            row.score = scores[i].score.toString();
+            row.uname.text = scores[i].uname;
+            row.score.text = scores[i].score.ToString();
         }
     }
-    #endregion
 }

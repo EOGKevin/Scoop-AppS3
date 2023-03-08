@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Score : MonoBehaviour
 {
-    public string name;
+    public string uname;
     public float score;
 
     public Score(string name, float score)

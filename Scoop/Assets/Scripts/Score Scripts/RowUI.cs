@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class RowUI : MonoBehaviour
+public class RowUi : MonoBehaviour
 {
     public Text rank;
-    public Text name;
+    public Text uname;
     public Text score;
 }
