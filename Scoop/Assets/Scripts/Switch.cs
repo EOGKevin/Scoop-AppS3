@@ -14,4 +14,9 @@ public class Switch : MonoBehaviour
     {
         SceneManager.LoadScene("Profile-Scene");
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main-Scene");
+    }
 }
